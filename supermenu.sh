@@ -92,8 +92,7 @@ b_funcion () {
 	echo "Ingrese un mensaje para el commit: "
 	read mensaje
 	git commit -m "$mensaje"
-	echo "¿Desea pushear los cambios al repositorio?"
-	decidir "git push -u https://github.com/deidelson/supermenu master"
+	decidir "¿Desea pushear al repositorio?; git push -u https://github.com/deidelson/supermenu master"
 	
 }
 
