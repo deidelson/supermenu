@@ -12,7 +12,8 @@
 #------------------------------------------------------
 # VARIABLES GLOBALES
 #------------------------------------------------------
-proyectoActual="/home/hall/proyectos"
+#Cuando lo cambien dejen comentado 
+proyectoActual="/home/hall/proyectos/"
 proyectos="/home/andrew/Documents/repo_GitLab/repos.txt";
 
 #------------------------------------------------------
