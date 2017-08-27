@@ -93,13 +93,10 @@ b_funcion () {
 	read mensaje
 	git commit -m "$mensaje"
 	echo "¿Desea pushear los cambios al repositorio?"
-	read respuesta
-	case $respuesta in
-		[Nn]* ) break;;
-		[Ss]* ) git push -u "https://github.com/deidelson/supermenu" "master" break;;
-		* ) echo "Tipear S/s o N/n"
-	esac
+	decidir "git push -u https://github.com/deidelson/supermenu master"
+	
 }
+
 
 c_funcion () {
       	imprimir_encabezado "\tOpción c.  Actualizar repo";
