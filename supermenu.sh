@@ -84,8 +84,7 @@ decidir () {
 #------------------------------------------------------
 a_funcion () {
     	imprimir_encabezado "\tOpción a.  Ver estado del proyecto";
-    	decidir "cd $proyectoActual; git status";
-}
+    	decidir "cd $proyectoActual; git status";}
 
 b_funcion () {
        	imprimir_encabezado "\tOpción b.  Guardar cambios";
@@ -93,6 +92,13 @@ b_funcion () {
 	echo "Ingrese un mensaje para el commit: "
 	read mensaje
 	git commit -m "$mensaje"
+	echo "¿Desea pushear los cambios al repositorio?"
+	read respuesta
+	case $respuesta in
+		[Nn]* ) break;;
+		[Ss]* ) git push -u "https://github.com/deidelson/supermenu" "master" break;;
+		* ) echo "Tipear S/s o N/n"
+	esac
 }
 
 c_funcion () {
