@@ -89,7 +89,10 @@ a_funcion () {
 
 b_funcion () {
        	imprimir_encabezado "\tOpción b.  Guardar cambios";
-	#completar
+	decidir "cd $proyectoActual; git add -A"
+	echo "Ingrese un mensaje para el commit: "
+	read mensaje
+	git commit -m "$mensaje"
 }
 
 c_funcion () {
