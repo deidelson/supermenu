@@ -92,14 +92,14 @@ b_funcion () {
 	echo "Ingrese un mensaje para el commit: "
 	read mensaje
 	git commit -m "$mensaje"
-	decidir "¿Desea pushear al repositorio?; git push -u https://github.com/deidelson/supermenu master"
+	decidir "¿Desea pushear al repositorio?; git push origin master"
 	
 }
 
 
 c_funcion () {
       	imprimir_encabezado "\tOpción c.  Actualizar repo";
-      	#completar   	 
+      	decidir "¿Desea actualizar el repositorio local?; git pull origin master"   	  
 }
 
 d_funcion () {
