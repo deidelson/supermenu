@@ -13,7 +13,7 @@
 # VARIABLES GLOBALES
 #------------------------------------------------------
 #Cuando lo cambien dejen comentado 
-proyectoActual="/home/hall/proyectos/"
+proyectoActual="/home/maxphoenix/Documents/GitHub/TPSOR/supermenu"
 proyectos="/home/andrew/Documents/repo_GitLab/repos.txt";
 
 #------------------------------------------------------
@@ -87,7 +87,7 @@ a_funcion () {
     	decidir "cd $proyectoActual; git status";}
 
 b_funcion () {
-       	imprimir_encabezado "\tOpción b.  Guardar cambios";
+      	imprimir_encabezado "\tOpción b.  Guardar cambios";
 	decidir "cd $proyectoActual; git add -A"
 	echo "Ingrese un mensaje para el commit: "
 	read mensaje
