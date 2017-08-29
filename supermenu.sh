@@ -13,7 +13,8 @@
 # VARIABLES GLOBALES
 #------------------------------------------------------
 #Cuando lo cambien dejen comentado 
-proyectoActual="/home/maxphoenix/Documents/GitHub/TPSOR/supermenu"
+#proyectoActual="/home/maxphoenix/Documents/GitHub/TPSOR/supermenu"
+proyectoActual="/home/hall/proyectos/supermenu"
 proyectos="/home/andrew/Documents/repo_GitLab/repos.txt";
 
 #------------------------------------------------------
