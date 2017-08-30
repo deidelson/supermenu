@@ -1,6 +1,5 @@
-
 *.txt
 repos.txt
-repos.txt
-repos.txt
 *.swp
+
+.supermenu.sh.swp
