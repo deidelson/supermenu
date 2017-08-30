@@ -124,6 +124,7 @@ e_funcion () {
         decidir "echo ¿Desea Agregar Repositorio?; agregar_Repo $direccion";
 		ultimaLinea=$(cantLineas)
         nombre=$(damePath $ultimaLinea)
+	echo "Repositorio Agregado: "
 	echo $nombre
 	    
 	
@@ -138,7 +139,6 @@ agregar_Repo(){
         ultimaLinea=$(($actuales + 1))
 	linea="$ultimaLinea - $1"
 	echo "$linea" >> repos.txt
-
 	}
 
 
