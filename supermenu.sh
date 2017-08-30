@@ -95,14 +95,14 @@ b_funcion () {
 	echo "Ingrese un mensaje para el commit: "
 	read mensaje
 	git commit -m "$mensaje"
-	decidir "¿Desea pushear al repositorio?; git push origin master"
+	decidir "echo ¿Desea pushear al repositorio?; git push origin master"
 	
 }
 
 
 c_funcion () {
       	imprimir_encabezado "\tOpción c.  Actualizar repo";
-      	decidir "¿Desea actualizar el repositorio local?; git pull origin master"   	  
+      	decidir "echo ¿Desea actualizar el repositorio local?; git pull origin master"   	  
 }
 
 d_funcion () {
@@ -121,7 +121,7 @@ e_funcion () {
 	echo "Ingrese la direccion del proyecto a agregar:  "
 	read direccion
 
-        decidir "¿Desea actualizar el repositorio local?; agregar_Repo $direccion";
+        decidir "echo ¿Desea Agregar Repositorio?; agregar_Repo $direccion";
 		ultimaLinea=$(cantLineas)
         nombre=$(damePath $ultimaLinea)
 	echo $nombre
