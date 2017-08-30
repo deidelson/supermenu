@@ -122,6 +122,7 @@ e_funcion () {
 	read direccion
 
         decidir "¿Desea actualizar el repositorio local?; agregar_Repo $direccion";
+		ultimaLinea=$(cantLineas)
         nombre=$(damePath $ultimaLinea)
 	echo $nombre
 	    
