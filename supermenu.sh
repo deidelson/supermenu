@@ -15,7 +15,7 @@
 #Cuando lo cambien dejen comentado 
 #proyectoActual="/home/maxphoenix/Documents/GitHub/TPSOR/supermenu"
 proyectoActual="/home/hall/proyectos/supermenu"
-proyectos="/home/andrew/Documents/repo_GitLab/repos.txt";
+proyectos="/home/hall/proyectos/supermenu/repos.txt";
 
 #------------------------------------------------------
 # DISPLAY MENU
@@ -80,6 +80,35 @@ decidir () {
 	done
 }
 
+imprimirRepos(){
+	cat $proyectos
+}
+
+limpiarPantalla(){
+	eval "clear"
+}
+
+cambiarActual(){
+	num=$1" -"
+	valor="cat $proyectos | grep -w $num"
+	if eval $valor; then
+		#guardo el resultado en una variable
+		intermedio=$(eval $valor)
+		#le quito el numero y el guion
+		proyectoActual=${intermedio##* - }
+		espacio
+		echo "El proyecto seleccionado es: $proyectoActual"
+	else
+		echo Ese directorio no existe
+		echo "El proyecto seleccionado es: $proyectoActual"
+	fi
+}
+
+espacio(){
+	echo 
+	echo 
+}
+
 #------------------------------------------------------
 # FUNCTIONES del MENU
 #------------------------------------------------------
@@ -105,7 +134,13 @@ c_funcion () {
 
 d_funcion () {
 	imprimir_encabezado "\tOpción d.  Cambiar proyecto";
-	#completar
+	imprimirRepos
+	espacio
+	echo "El proyecto seleccionado es: $proyectoActual"
+	espacio
+	echo "Ingrese el numero del proyecto que desea utilizar: "
+	read utilizar
+	cambiarActual $utilizar
 }
 
 
