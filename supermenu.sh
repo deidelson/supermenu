@@ -139,7 +139,7 @@ b_funcion () {
 	echo "Ingrese un mensaje para el commit: "
 	read mensaje
 	git commit -m "$mensaje"
-	decidir "¿Desea pushear al repositorio?; git push origin master"
+	decidir "echo ¿Desea pushear al repositorio?; git push origin master"
 	
 }
 
