@@ -81,7 +81,7 @@ decidir () {
 }
 
 imprimirRepos(){
-	cat $proyectos
+	cat 'repos.txt'
 }
 
 limpiarPantalla(){
@@ -90,7 +90,7 @@ limpiarPantalla(){
 
 cambiarActual(){
 	num=$1" -"
-	valor="cat $proyectos | grep -w $num"
+	valor="cat 'repos.txt' | grep -w $num"
 	if eval $valor; then
 		#guardo el resultado en una variable
 		intermedio=$(eval $valor)
@@ -107,6 +107,22 @@ cambiarActual(){
 espacio(){
 	echo 
 	echo 
+}
+agregar_Repo(){
+	actuales=$(cantLineas)
+        ultimaLinea=$(($actuales + 1))
+	linea="$ultimaLinea - $1"
+	echo "$linea" >> repos.txt
+	}
+
+
+cantLineas () {
+	cat "repos.txt" | wc -l
+}
+
+damePath(){
+        sed -n "${1}{p;q;}" repos.txt
+      
 }
 
 #------------------------------------------------------
@@ -145,9 +161,25 @@ d_funcion () {
 
 
 e_funcion () {
-	imprimir_encabezado "\tOpción e.  Agregar proyecto nuevo";        
+	imprimir_encabezado "\tOpción e.  Agregar proyecto nuevo"; 
+	echo "Ingrese la direccion del proyecto a agregar:  "
+	read direccion
+
+        decidir "echo ¿Desea Agregar Repositorio?; agregar_Repo $direccion";
+		ultimaLinea=$(cantLineas)
+        nombre=$(damePath $ultimaLinea)
+	echo "Repositorio Agregado: "
+	echo $nombre
+	    
+	
+	 	
+	
+	
 	#completar
 }
+
+
+
 
 
 #------------------------------------------------------
