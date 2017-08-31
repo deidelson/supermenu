@@ -14,17 +14,19 @@
 #------------------------------------------------------
 #Cuando lo cambien dejen comentado 
 #proyectoActual="/home/maxphoenix/Documents/GitHub/TPSOR/supermenu"
-proyectoActual="/home/hall/proyectos/supermenu"
-proyectos="/home/andrew/Documents/repo_GitLab/repos.txt";
+#proyectoActual="/home/hall/proyectos/supermenu"
+proyectoActual=1;
+proyectos="/home/andrew/Documents/repo_GitLab/repos.txt"
+
 
 #------------------------------------------------------
 # DISPLAY MENU
 #------------------------------------------------------
 imprimir_menu () {
        imprimir_encabezado "\t  S  U  P  E  R  -  M  E  N U ";
-	
+    nombre=$(damePath $proyectoActual)
     echo -e "\t\t El proyecto actual es:";
-    echo -e "\t\t $proyectoActual";
+    echo -e "\t\t $nombre";
     
     echo -e "\t\t";
     echo -e "\t\t Opciones:";
@@ -105,15 +107,48 @@ c_funcion () {
 
 d_funcion () {
 	imprimir_encabezado "\tOpción d.  Cambiar proyecto";
-	#completar
+	cat repos.txt
+	echo "Ingrese a continuacion el numero del proyecto a cambiar: "
+	read seleccion 
+       # falta poder copiar el path del proyecto elegido (linea del txt) a la variable proyecto actual
+
 }
+
 
 
 e_funcion () {
-	imprimir_encabezado "\tOpción e.  Agregar proyecto nuevo";        
+	imprimir_encabezado "\tOpción e.  Agregar proyecto nuevo"; 
+	echo "Ingrese la direccion del proyecto a agregar:  "
+	read direccion
+
+        decidir "¿Desea actualizar el repositorio local?; agregar_Repo $direccion";
+        nombre=$(damePath $ultimaLinea)
+	echo $nombre
+	    
+	
+	 	
+	
+	
 	#completar
 }
 
+agregar_Repo(){
+	actuales=$(cantLineas)
+        ultimaLinea=$(($actuales + 1))
+	linea="$ultimaLinea - $1"
+	echo "$linea" >> repos.txt
+
+	}
+
+
+cantLineas () {
+	cat "repos.txt" | wc -l
+}
+
+damePath(){
+        sed -n "${1}{p;q;}" repos.txt
+      
+}
 
 #------------------------------------------------------
 # LOGICA PRINCIPAL
