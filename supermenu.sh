@@ -14,8 +14,9 @@
 #------------------------------------------------------
 #Cuando lo cambien dejen comentado 
 #proyectoActual="/home/maxphoenix/Documents/GitHub/TPSOR/supermenu"
-proyectoActual="/home/hall/proyectos/supermenu"
-proyectos="/home/hall/proyectos/supermenu/repos.txt";
+#proyectoActual="/home/hall/proyectos/supermenu"
+proyectoActual=""
+proyectos='repos.txt';
 
 #------------------------------------------------------
 # DISPLAY MENU
@@ -81,7 +82,7 @@ decidir () {
 }
 
 imprimirRepos(){
-	cat 'repos.txt'
+	cat $proyectos
 }
 
 limpiarPantalla(){
@@ -90,7 +91,7 @@ limpiarPantalla(){
 
 cambiarActual(){
 	num=$1" -"
-	valor="cat 'repos.txt' | grep -w $num"
+	valor="cat $proyectos | grep -w $num"
 	if eval $valor; then
 		#guardo el resultado en una variable
 		intermedio=$(eval $valor)
