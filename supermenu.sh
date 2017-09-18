@@ -15,7 +15,8 @@
 #Cuando lo cambien dejen comentado 
 #proyectoActual="/home/maxphoenix/Documents/GitHub/TPSOR/supermenu"
 #proyectoActual="/home/hall/proyectos/supermenu"
-proyectoActual="";
+directorio=$(eval "pwd");
+proyectoActual=$directorio;
 proyectos='repos.txt';
 
 #------------------------------------------------------
@@ -194,7 +195,6 @@ e_funcion () {
 #------------------------------------------------------
 # LOGICA PRINCIPAL
 #------------------------------------------------------
-proyectoActual=$(getPWD);
 while  true
 do
     # 1. mostrar el menu
