@@ -14,8 +14,8 @@
 #------------------------------------------------------
 #Cuando lo cambien dejen comentado 
 #proyectoActual="/home/maxphoenix/Documents/GitHub/TPSOR/supermenu"
-#proyectoActual="/home/hall/proyectos/supermenu"
-proyectoActual=""
+proyectoActual="/home/hall/proyectos/supermenu"
+#proyectoActual=""
 proyectos='repos.txt';
 
 #------------------------------------------------------
@@ -146,7 +146,7 @@ b_funcion () {
 
 c_funcion () {
       	imprimir_encabezado "\tOpción c.  Actualizar repo";
-      	decidir "¿Desea actualizar el repositorio local?; git pull origin master"   	  
+      	decidir "echo ¿Desea actualizar el repositorio local?; git pull origin master"   	  
 }
 
 d_funcion () {
