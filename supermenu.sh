@@ -14,8 +14,8 @@
 #------------------------------------------------------
 #Cuando lo cambien dejen comentado 
 #proyectoActual="/home/maxphoenix/Documents/GitHub/TPSOR/supermenu"
-proyectoActual="/home/hall/proyectos/supermenu"
-#proyectoActual=""
+#proyectoActual="/home/hall/proyectos/supermenu"
+proyectoActual="";
 proyectos='repos.txt';
 
 #------------------------------------------------------
@@ -43,6 +43,10 @@ imprimir_menu () {
 #------------------------------------------------------
 # FUNCTIONES AUXILIARES
 #------------------------------------------------------
+
+
+
+
 
 imprimir_encabezado () {
     clear;
@@ -126,6 +130,10 @@ damePath(){
       
 }
 
+getPWD(){
+  pwd;
+}
+
 #------------------------------------------------------
 # FUNCTIONES del MENU
 #------------------------------------------------------
@@ -186,6 +194,7 @@ e_funcion () {
 #------------------------------------------------------
 # LOGICA PRINCIPAL
 #------------------------------------------------------
+proyectoActual=$(getPWD);
 while  true
 do
     # 1. mostrar el menu
