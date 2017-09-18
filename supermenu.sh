@@ -17,7 +17,7 @@
 #proyectoActual="/home/hall/proyectos/supermenu"
 directorio=$(eval "pwd");
 proyectoActual=$directorio;
-proyectos='repos.txt';
+proyectos=$(eval "pwd")'/repos.txt';
 
 #------------------------------------------------------
 # DISPLAY MENU
@@ -118,16 +118,16 @@ agregar_Repo(){
 	actuales=$(cantLineas)
         ultimaLinea=$(($actuales + 1))
 	linea="$ultimaLinea - $1"
-	echo "$linea" >> repos.txt
+	echo "$linea" >> $proyectos
 	}
 
 
 cantLineas () {
-	cat "repos.txt" | wc -l
+	cat "$proyectos" | wc -l
 }
 
 damePath(){
-        sed -n "${1}{p;q;}" repos.txt
+        sed -n "${1}{p;q;}" $proyectos
       
 }
 
