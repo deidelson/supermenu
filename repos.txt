@@ -1,5 +1,5 @@
 1 - /home/hall/proyectos/supermenu
 2 - /home/hall/proyectos/TP-Ingenieria-de-Software
 3 - /home/agus/supermenu
-6 - /home/agus/Publicibot
-7 - /home/agus/Notarius
+4 - /home/agus/Publicibot
+5 - /home/agus/Notarius
