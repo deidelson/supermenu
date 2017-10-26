@@ -20,7 +20,7 @@ int main(int argc,char **argv)
 
   //Setear la direccion IP en my_server_addr a “127.0.0.1” (localhost) si el servidor esta en la misma maquina.
   // inet_pton - convierte direcciones IPv4/IPv6 de texto a forma binaria
-  inet_pton(AF_INET,"inmobi.ddns.net",&(my_server_addr.sin_addr));
+  inet_pton(AF_INET,"181.16.16.61",&(my_server_addr.sin_addr));
 
 
   //////////////////////////////////////
