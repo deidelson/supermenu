@@ -7,6 +7,7 @@
 
 int main(int argc,char **argv)
 {
+
   //////////////////////////////////////
   // Definir la direccion del server
   //////////////////////////////////////
@@ -38,8 +39,8 @@ int main(int argc,char **argv)
   //////////////////////////////////////////
   // Empieza el ciclo principal del cliente
   //////////////////////////////////////////
-
-  while(1){
+  bool salir_ciclo = false;
+  while(!salir_ciclo){
     //Primero limpiar los buffers sendline and recvline
     bzero( sendline, 100);
     bzero( recvline, 100);
@@ -62,6 +63,16 @@ int main(int argc,char **argv)
     //solucion
     /////////////////////////////////////////////////////////////
     //completar...
+	char target[100];
+    strncpy(target, recvline, 5);
+    target[5] = '\0'; //importante para terminar el string
+
+    //ahora comparo target con la palabra salir
+    if(strcmp(target,"chau")==0){
+      printf("Pa k kierez zvr ezo jaja Salud2, Adios Amigos\n");
+      salir_ciclo=true;
+    }
+   
 	
   }
   return 0; //EXIT_SUCCESS;   
