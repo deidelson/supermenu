@@ -38,8 +38,7 @@ int main(int argc,char **argv)
   //////////////////////////////////////////
   // Empieza el ciclo principal del cliente
   //////////////////////////////////////////
-  bool salir_ciclo = false;
-  while(!salir_ciclo){
+  while(1){
     //Primero limpiar los buffers sendline and recvline
     bzero( sendline, 100);
     bzero( recvline, 100);
@@ -62,11 +61,6 @@ int main(int argc,char **argv)
     //solucion
     /////////////////////////////////////////////////////////////
     //completar...
-    if(strcmp(recvline,"chau")==0){
-      write(comm_fd, "pa ke kierez saver ezo jajaja salu2\n", strlen("pa ke kierez saver ezo jajaja salu2\n")+1); 
-      salir_ciclo=true;
-    }
-  }
-  printf("Adios amigos!\n");    
+  }    
   return 0; //EXIT_SUCCESS;  
 }
