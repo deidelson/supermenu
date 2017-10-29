@@ -7,10 +7,9 @@
 
 #include <sys/types.h>
 #include <stdio.h>
-#include<string.h>
+#include <string.h>
 #include <stdbool.h>
-
-
+#include <unistd.h>
 int main()
 {
   char str[100];
