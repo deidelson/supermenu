@@ -19,7 +19,7 @@ int main(int argc,char **argv)
 
   //Setear la direccion IP en my_server_addr a “127.0.0.1” (localhost) si el servidor esta en la misma maquina.
   // inet_pton - convierte direcciones IPv4/IPv6 de texto a forma binaria
-  inet_pton(AF_INET,"127.0.0.1",&(my_server_addr.sin_addr));
+  inet_pton(AF_INET,"169.254.200.130",&(my_server_addr.sin_addr));
   //////////////////////////////////////
   // Definir el socket
   //////////////////////////////////////
@@ -38,7 +38,8 @@ int main(int argc,char **argv)
   //////////////////////////////////////////
   // Empieza el ciclo principal del cliente
   //////////////////////////////////////////
-  while(1){
+  bool salir_ciclo = false;
+  while(!salir_ciclo){
     //Primero limpiar los buffers sendline and recvline
     bzero( sendline, 100);
     bzero( recvline, 100);
@@ -57,10 +58,18 @@ int main(int argc,char **argv)
     printf("El servidor respondió:");
     printf("%s",recvline);
     
+    
+    char target[100];
+    strncpy(target, recvline, 4);
+    target[4] = '\0'; //importante para terminar el string
     /////////////////////////////////////////////////////////////
     //solucion
     /////////////////////////////////////////////////////////////
     //completar...
-  }    
+    if(strcmp(target,"chau")==0){
+       printf("Adios amigos!\n");
+      salir_ciclo=true;
+    }
+  }
   return 0; //EXIT_SUCCESS;  
 }

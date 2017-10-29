@@ -110,6 +110,6 @@ int main()
       write(comm_fd, str, strlen(str)+1);
     }
   }
-  printf("Adios amigos!\n");    
+     
   return 0; //EXIT_SUCCESS;
 }
