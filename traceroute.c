@@ -451,8 +451,18 @@ do_try (trace_t * trace, const int hop,
       fflush (stdout);
     }
   printf ("\n");
-  system("curl ipinfo.io/country");
-  system("curl ipinfo.io/city");
+  char *direccion=inet_ntoa (trace->from.sin_addr);
+	char *primera = "curl ipinfo.io/";
+	char *segunda = "/country";
+	char todo[80];
+	strcpy(todo, primera);
+	strcat(todo, direccion);
+	strcat(todo, segunda);
+	//printf(todo);
+
+	printf ("\n");
+  	system(todo);
+	printf ("\n");
 }
 
 char *
