@@ -451,6 +451,8 @@ do_try (trace_t * trace, const int hop,
       fflush (stdout);
     }
   printf ("\n");
+  system("curl ipinfo.io/country");
+  system("curl ipinfo.io/city");
 }
 
 char *
